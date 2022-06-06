@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-wdgs@%gk9@q13&_ut^u9r@s=6vom-4u_c555#_i089h^cx($(8
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CORS_ALLOWED_ORIGINS=['*']
+CORS_ORIGIN_ALLOW_ALL=True
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     #'authapp',
     'django.contrib.staticfiles',
     'debug_toolbar',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -56,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'todo.urls'
@@ -153,7 +155,8 @@ USE_TZ = True
 
 STATIC_ROOT= os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
-
+ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_ALLOW_ALL=True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
