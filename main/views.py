@@ -72,9 +72,18 @@ class addexperience(APIView):
 class sitesperregion(APIView):
 
     def get(self,request,pk):
-        sites_per_region=Feature.objects.filter(region=pk)
-        serializer=FeatureSerializer(sites_per_region,many=True)
-        return Response(serializer.data)
+        print(pk)
+        a=len(pk)
+        
+        if a ==3:
+            sites=Feature.objects.all()
+            serializer=FeatureSerializer(sites,many=True)
+            return Response(serializer.data)
+
+        else:
+            sites_per_region=Feature.objects.filter(region=pk)
+            serializer=FeatureSerializer(sites_per_region,many=True)
+            return Response(serializer.data)
 class map(APIView):
     def get(self,request,pk):
         site=Feature.objects.get(id=pk)
