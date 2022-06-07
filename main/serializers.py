@@ -7,7 +7,7 @@ class FeatureSerializer(serializers.ModelSerializer):
 
     class Meta:
         model=Feature
-        fields=['id','title','region','experience','created','nearby_town','image_url']
+        fields=['id','title','region','experience','nearby_town','image_url']
         
 class SpecificSerializer(serializers.ModelSerializer):
     class Meta:
