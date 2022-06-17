@@ -20,6 +20,7 @@ import requests
 
 #@method_decorator(cache_page(1))
 class allsites(APIView):
+    @permission_classes ((IsAuthenticated,))
     def get(self,request):
         sites=Feature.objects.all()
         serializer=FeatureSerializer(sites,many=True)
@@ -31,6 +32,7 @@ class allsites(APIView):
             return Response(serializer.data)
         return HttpResponse("not valid")
 class specificsite(APIView):
+    @permission_classes ((IsAuthenticated,))
     def get(self,request,pk):
         site=Feature.objects.get(id=pk)
         site_name=site.nearby_town
@@ -70,6 +72,7 @@ class addexperience(APIView):
 
 
 class sitesperregion(APIView):
+    @permission_classes ((IsAuthenticated,))
 
     def get(self,request,pk):
         print(pk)
