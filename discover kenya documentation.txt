@@ -52,3 +52,12 @@ will add experience to the experience with th id given
 5.
 /map/<site title>
 /map/nairobi national park :will show the map from your place to nairobi national park,route ,distance and other info
+
+6./auth/users
+for creating users
+{
+    "username":"willy",
+    "email":"willy@gmail.com",
+    "password":"1234",
+    "re_password":"1234"
+    }
