@@ -90,6 +90,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+#connecting to heroku postgress
 import dj_database_url
 
 
