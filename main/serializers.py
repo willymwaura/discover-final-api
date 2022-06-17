@@ -8,6 +8,7 @@ class FeatureSerializer(serializers.ModelSerializer):
     class Meta:
         model=Feature
         fields=['id','title','region','experience','nearby_town','image_url']
+
         
 class SpecificSerializer(serializers.ModelSerializer):
     class Meta:
